@@ -20,25 +20,9 @@ class TableDisplay extends React.Component {
         })
     }
 
-    nextpage = () => {
-        if (this.state.end < this.state.data.length) {
-            this.setState({
-                start: this.state.start + 2,
-                end: this.state.end + 2
-            })
-        }
+    
 
-    }
-
-    prevpage = () => {
-        if (this.state.start > 0) {
-            this.setState({
-                start: this.state.start - 2,
-                end: this.state.end - 2
-            })
-        }
-
-    }
+   
 
     gettotalpage = () => {
         let totalpage = this.state.data.length / 2
@@ -149,11 +133,9 @@ class TableDisplay extends React.Component {
                     </tbody>
                 </table>
                 <div className="PageButton">
-                    <button className="btn btn-sm btn-outline-primary mx-2"
-                        onClick={() => this.prevpage()}>Prev</button>
+                    
                     {this.getpagelist(this.state.current_pageno)}
-                    <button className="btn btn-sm btn-outline-primary mx-2"
-                        onClick={() => this.nextpage()}>Next</button>
+                    
                 </div>
             </div>
         )
